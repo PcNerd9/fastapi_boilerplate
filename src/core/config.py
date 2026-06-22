@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = ""
     API_VERSION: str = ""
     ENVIRONMENT: str = "dev"
+    LOG_LEVEL: str = "INFO"
 
 
     SERVER_HOST: str = "localhost"
