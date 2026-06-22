@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     
     PROJECT_NAME: str = ""
     API_VERSION: str = ""
+    ENVIRONMENT: str = "dev"
 
 
     SERVER_HOST: str = "localhost"

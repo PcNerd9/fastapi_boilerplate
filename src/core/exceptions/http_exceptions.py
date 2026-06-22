@@ -6,7 +6,7 @@ class ApiException(HTTPException):
     def __init__(self, status_code: int, message: str, data: dict[str, Any] | None = None):
         data_dict = {
             "status_code": status_code,
-            "status": "error",
+            "success": False,
             "message": message
         }
         

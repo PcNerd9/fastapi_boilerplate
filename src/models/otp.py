@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
-from sqlalchemy import DateTime, String, ForeignKey, UniqueConstraint
+from sqlalchemy import DateTime, String, ForeignKey, Integer, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import UUID as UUID_pg
 from uuid import UUID, uuid4
@@ -17,6 +17,7 @@ class OTP(Base):
     hashed_otp: Mapped[str] = mapped_column(String, nullable=False)
     otp_type: Mapped[str] = mapped_column(String(32), nullable=False)
     otp_expiry: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    retry_count: Mapped[int] = mapped_column(Integer default=0)
     
     __table_args__ = (
         UniqueConstraint(
