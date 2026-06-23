@@ -27,6 +27,21 @@ class Settings(BaseSettings):
     
     REDIS_URL: str = ""
     
+    # SMTP EMAIL
+    SMTP_USER: str = ""
+    SMTP_PASSWORD: str = ""
+    PROJECT_EMAIL: str = ""
+    EMAIL_FROM_NAME: str = ""
+    MAIL_PORT: int = 465
+    MAIL_SERVER: str = ""
+    MAIL_SSL_TLS: bool = False
+    MAIL_STARTTLS: bool = True
+    USE_CREDENTIALS: bool = True
+    VALIDATE_CERTS: bool = True
+    
+    # Resend
+    RESEND_API_KEY: str = ""
+    RESEND_EMAIL: str = ""
     
 
         
